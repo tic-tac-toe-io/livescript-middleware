@@ -16,3 +16,10 @@ Check out **[livescript.net](http://livescript.net)** for more information, exam
 
 ### Source
 [git://github.com/yuri0/livescript-middleware.git](git://github.com/yuri0/livescript-middleware.git)
+
+
+### Todos
+
+- [ ] write a simple `examples/express/index.js` with ES6 to test/demonstrate this middleware
+- [ ] test `examples/koa/index.js` with [koa](https://github.com/koajs/koa)
+- [ ] use a forked livescript (https://github.com/ischenkodv/LiveScript/commit/7ae73cb263cb55ae32e44fddae81510aa4401679) with correct source map support (upgrade `source-map-support` from 0.3.2 to 0.5.11)
