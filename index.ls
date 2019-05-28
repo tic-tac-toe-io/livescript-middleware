@@ -6,15 +6,10 @@
 /**
  * Module dependencies.
  */
-require! {
-  'uglify-js': {minify}
-  livescript
-
-  fs
-  url
-  path: {join, sep, dirname}
-  mkdirp
-}
+{minify} = require \uglify-js
+livescript = require \livescript
+require! <[fs url mkdirp path]>
+{join, sep, dirname} = path
 
 const defaults =
   compress: false
@@ -43,8 +38,8 @@ module.exports = (options = {}) ->
   # Middleware
   return (req, res, next) ->
     return next! unless array-contains <[ GET HEAD ]> req.method
-
     path = url.parse req.url .pathname
+    path = (require \path).basename path
 
     return next! unless /\.js$/.test path
 
@@ -118,3 +113,4 @@ function compare(pathA, pathB)
     pathB.shift!
 
   overlap.join sep
+
